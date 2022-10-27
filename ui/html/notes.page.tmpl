@@ -1,0 +1,25 @@
+{{template "top1" .}}
+ 
+<title>Домашняя страница - Notemaker</title>
+{{template "top2" .}}
+<nav>
+    <a href='/api/notes'>Домашняя страница</a>
+    <a href='/api/notes/create'>Создать новую заметку</a>
+    <a class = "logout" href="/auth/sign-out" >Выйти</a>
+</nav>
+<main>
+    <h2>Добро пожаловать {{.Username}}</h2>
+    {{if .ToCheck}}
+        <h2>Все заметки</h2>
+        <div class = "snippet">
+            <ul>
+            {{range .Note}}
+                <li><a href = "/api/notes/{{.Id}}">{{.Title}}</a></li>
+            {{end}}
+            </ul>
+        </div>
+    {{else}}
+        <h3>Нету никаких заметок...</h3>
+    {{end}}
+</main>
+{{template "bottom" .}}

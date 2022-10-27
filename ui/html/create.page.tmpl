@@ -1,0 +1,18 @@
+{{template "top1" .}}
+
+<title>Новая заметка - Notemaker</title>
+
+{{template "top2" .}}
+<nav>
+    <a href='/api/notes'>Домашняя страница</a>
+    <a href='/api/notes/create'>Создать новую заметку</a>
+</nav>
+<main>
+    <h2>Добавление заметки</h2>
+    <form action="/api/notes/" method = "post">
+        <input class = "title" type="text" name="title" placeholder="Введите название заметки">
+        <textarea name = "content" placeholder="Введите содержимое"></textarea>
+        <button>Сохранить</button>
+    </form>
+</main>
+{{template "bottom" .}}

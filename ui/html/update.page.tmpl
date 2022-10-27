@@ -1,0 +1,16 @@
+{{template "top1" .}}
+ 
+<title>Звметка #{{.ID}}- Notemaker</title>
+{{template "top2" .}}
+<main>
+    <div class='snippet_update'>
+        <form action="/api/notes/update/{{.ID}}" method = "post">
+            <textarea class="update_title" style="font-weight: bold;" name = "title">{{.Title}}</textarea>
+            <textarea class="update_content" name = "content" placeholder="Введите содержимое">{{.Content}}</textarea>
+            <button>Сохранить</button>
+        </form>
+
+    </div>
+</main>
+
+{{template "bottom" .}}

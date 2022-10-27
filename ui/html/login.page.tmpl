@@ -1,0 +1,25 @@
+{{template "top1" .}}
+
+<title>Домашняя страница - Notemaker</title>
+
+{{template "top2" .}}
+<main>
+    <h1 class = "topic">Sign In</h2>
+    <form class="login" method="post" action="/auth/sign-in/">  
+        <label>Username</label>   
+        <input type="text" placeholder="Enter Username" name="username" required>  
+        <label>Password</label>   
+        <input type="password" placeholder="Enter Password" name="password" required>  
+        <button type="submit">Войти</button>  
+        
+        {{if .LoginErr}}
+            <span class = "login_error" id = "login_error">
+                <p>{{.ErrMessage}}</p>
+            </span>
+        {{end}}
+    </form>
+
+    <a href = "/auth/register">or Register</a>
+</main>
+
+{{template "bottom" .}}

@@ -1,0 +1,25 @@
+{{template "top1" .}}
+
+<title>Регистрация - Notemaker</title>
+
+{{template "top2" .}}
+<main>
+    <h1 class = "topic">Sign Up</h2>
+    <form class="login" method="post" action="/auth/sign-up/">  
+        <label>Email</label>   
+        <input type="text" placeholder="Enter Email" name="email" required>  
+        <label>Username</label>   
+        <input type="text" placeholder="Enter Username" name="username" required>  
+        <label>Password</label>   
+        <input type="password" placeholder="Enter Password" name="password" required>  
+        <button type="submit">Сохранить</button>   
+
+        {{if .RegisterErr}}
+            <span class = "login_error" id = "login_error">
+                <p>{{.ErrMessage}}</p>
+            </span>
+        {{end}}
+    </form>
+</main>
+
+{{template "bottom" .}}
